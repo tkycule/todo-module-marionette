@@ -126,6 +126,7 @@ gulp.task('serve', ['styles', 'scripts', 'injector:js', 'templates', 'fonts'], f
   gulp.watch('app/styles/**/*.css', ['styles']);
   gulp.watch('app/scripts/**/*.coffee', ['scripts']);
   gulp.watch('app/templates/**/*.hbs', ['templates']);
+  gulp.watch('app/index.html', ['injector:js']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
