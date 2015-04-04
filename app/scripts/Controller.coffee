@@ -32,6 +32,15 @@ class App.Controller extends Backbone.Marionette.Controller
 
 
   edit_task: (id) ->
+    @requireLogin =>
+
+      defer = []
+      unless @tasksCollection
+        @tasksCollection = new App.TasksCollection()
+        defer = @tasksCollection.fetch({reset: true})
+
+      $.when(defer).done =>
+        App.rootView.main.show(new App.EditTaskView(model: @tasksCollection.findWhere(id: parseInt(id))))
     
   logout: ->
     @requireLogin ->
