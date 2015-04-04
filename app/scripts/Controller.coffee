@@ -9,6 +9,8 @@ class App.Controller extends Backbone.Marionette.Controller
     new App.HeaderView(model: App.session).render()
 
   index: ->
+    @skipLogin ->
+      App.rootView.main.show(new App.IndexView(model: App.session))
 
   new_user: ->
 
