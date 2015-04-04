@@ -1,0 +1,10 @@
+{
+  "name": "todo-module-marionette",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.1",
+    "backbone": "1.1.2",
+    "handlebars": "3.0.0",
+    "marionette": "2.4.1"
+  }
+}
