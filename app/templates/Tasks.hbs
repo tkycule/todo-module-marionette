@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-2" id="sidebar">
+    <h3>収集</h3>
+    <ul class="list-unstyled">
+      <li id="menu-inbox">
+        <a class="clearfix" href="/tasks">
+          <div class="pull-left">
+            <i class="glyphicon glyphicon-inbox"></i>
+            収集箱
+          </div>
+          <div class="pull-right inbox-count"></div>
+        </a>
+      </li>
+    </ul>
+
+    <h3>終了</h3>
+    <ul class="list-unstyled">
+      <li id="menu-completed">
+        <a class="clearfix" href="/tasks/completed">
+          <div class="pull-left">
+            <i class="glyphicon glyphicon-ok-sign"></i>
+            完了
+          </div>
+          <div class="pull-right completed-count"></div>
+        </a>
+      </li>
+      <li id="menu-deleted">
+        <a class="clearfix" href="/tasks/deleted">
+          <div class="pull-left">
+            <i class="glyphicon glyphicon-trash"></i>
+            ゴミ箱
+          </div>
+          <div class="pull-right deleted-count"></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-10">
+    <form id="new_task" class="new_task">
+      <div class="input-group">
+        <input class="form-control" placeholder="タスク" type="text" id="task_title" ng-model="new_task_title">
+        <span class="input-group-btn">
+          <input type="submit" name="commit" value="登録" class="btn btn-success">
+        </span>
+      </div>
+    </form>
+    
+    <ul class="list-unstyled" id="tasks"></ul>
+  </div>
+</div>

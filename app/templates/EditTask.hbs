@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h2>タスク編集</h2>
+
+  <form class="simple_form edit_task well" novalidate="novalidate">
+    <div class="form-group string required task_title">
+      <label class="string required control-label" for="task_title">
+        <abbr title="required">*</abbr> タイトル
+      </label>
+      <input class="string required form-control" id="task_title" type="text" value="{{title}}">
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group text optional task_memo">
+      <label class="text optional control-label" for="task_memo">メモ</label>
+      <textarea class="text optional form-control" id="task_memo" >{{memo}}</textarea>
+      <span class="help-block"></span>
+    </div>
+    <input class="btn btn-primary btn-block" name="commit" type="submit" value="Save">
+  </form>
+</div>

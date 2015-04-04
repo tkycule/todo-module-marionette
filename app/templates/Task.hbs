@@ -1,0 +1,14 @@
+<div class="pull-left">
+  <a href="/tasks/{{id}}/edit">{{title}}</a>
+</div>
+<div class="pull-right task-actions">
+  {{#if showComplete}}
+    <a class="task-complete btn btn-primary" data-action="complete">完了</a>
+  {{/if}}
+  {{#if showRevert}}
+    <a class="task-revert btn btn-default" data-action="revert">戻す</a>
+  {{/if}}
+  {{#if showDelete}}
+    <a class="task-delete btn btn-danger" data-action="delete">削除</a>
+  {{/if}}
+</div>
