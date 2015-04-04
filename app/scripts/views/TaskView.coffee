@@ -4,21 +4,17 @@ class App.TaskView extends Backbone.Marionette.ItemView
   className: "task clearfix"
   template: App.templates.Task
 
-  ui:
-    taskComplete: ".task-complete"
-    taskDelete: ".task-delete"
-    taskRevert: ".task-revert"
-
   events:
     "click .task-actions a": "taskAction"
 
   modelEvents:
     "sync": "render"
 
-  onRender: ->
-    @ui.taskComplete.toggle(@model.get("aasm_state") == "inbox")
-    @ui.taskDelete.toggle(@model.get("aasm_state") != "deleted")
-    @ui.taskRevert.toggle(@model.get("aasm_state") != "inbox")
+  templateHelpers: -> {
+    showComplete: @model.get("aasm_state") == "inbox"
+    showDelete: @model.get("aasm_state") != "deleted"
+    showRevert: @model.get("aasm_state") != "inbox"
+  }
 
   flashMessages:
     complete: "完了にしました。"
