@@ -12,5 +12,6 @@ $.ajaxSetup({
 
 @App = new Mn.Application()
 @App.on("start", ->
+  new App.Router(controller: new App.Controller())
   Backbone.history.start({pushState: true})
 )

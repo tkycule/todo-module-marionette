@@ -1,0 +1,32 @@
+class App.Controller extends Backbone.Marionette.Controller
+
+  initialize: ->
+
+    App.session = new App.Session()
+
+    App.rootView = new App.RootView()
+    App.rootView.render()
+    new App.HeaderView(model: App.session).render()
+
+  index: ->
+
+  new_user: ->
+
+  tasks: (filter) ->
+
+  edit_task: (id) ->
+    
+  logout: ->
+    
+  skipLogin: (callback) ->
+    unless App.session.currentUser()
+      callback.call(this)
+    else
+      Backbone.history.navigate("/tasks", true)
+
+  requireLogin: (callback) ->
+    if App.session.currentUser()
+      callback.call(this)
+    else
+      Backbone.history.navigate("/", true)
+    
