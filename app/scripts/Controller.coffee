@@ -13,6 +13,8 @@ class App.Controller extends Backbone.Marionette.Controller
       App.rootView.main.show(new App.IndexView(model: App.session))
 
   new_user: ->
+    @skipLogin ->
+      App.rootView.main.show(new App.NewUserView())
 
   tasks: (filter) ->
 
