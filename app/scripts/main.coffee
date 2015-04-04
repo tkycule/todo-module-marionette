@@ -6,7 +6,7 @@ $(document).on("click", "a[href]", (e) ->
 $.ajaxSetup({
   dataType: "json"
   beforeSend: (xhr) ->
-    if currentUser = Backbone.session.currentUser()
+    if currentUser = App.session.currentUser()
       xhr.setRequestHeader("Authorization", currentUser.get("authentication_token"))
 })
 
